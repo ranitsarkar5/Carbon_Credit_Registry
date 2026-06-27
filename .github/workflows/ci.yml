@@ -17,7 +17,7 @@ jobs:
         with:
           targets: wasm32-unknown-unknown
       - name: Build Contracts
-        run: cd contracts && cargo build --target wasm32-unknown-unknown --release
+        run: cd contracts && cargo build -p carbon_asset --target wasm32-unknown-unknown --release && cargo build -p carbon_registry --target wasm32-unknown-unknown --release
       - name: Test Contracts
         run: cd contracts && cargo test
 
@@ -31,6 +31,6 @@ jobs:
         with:
           node-version: 20
       - name: Install dependencies
-        run: cd frontend && npm ci
+        run: cd frontend && npm ci --ignore-scripts
       - name: Build
         run: cd frontend && npm run build
