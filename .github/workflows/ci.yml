@@ -31,6 +31,6 @@ jobs:
         with:
           node-version: 20
       - name: Install dependencies
-        run: npm install --ignore-scripts --legacy-peer-deps
+        run: cd frontend && npm install --ignore-scripts --legacy-peer-deps
       - name: Build
-        run: npm run build
+        run: cd frontend && npm run build

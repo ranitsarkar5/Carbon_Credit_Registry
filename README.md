@@ -55,6 +55,7 @@ cargo test
 
 ### 3. Frontend
 ```bash
+cd frontend
 # Install dependencies
 npm install
 # Setup env vars
