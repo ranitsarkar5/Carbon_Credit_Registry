@@ -101,7 +101,8 @@ The smart contracts have been successfully deployed and initialized on the Stell
 
 ## 📸 Screenshots
 
-*(Replace with actual screenshots of the Dashboard and Transaction Feed after running `npm run dev`)*
-- `Dashboard View`
-- `Real-Time Activity Feed`
-- `Freighter Wallet Connect Modal`
+<img width="1918" height="878" alt="Screenshot 2026-06-28 042835" src="https://github.com/user-attachments/assets/e14d813e-55f1-4e07-966a-ae0aba95f48a" />
+
+- <img width="1917" height="488" alt="Screenshot 2026-06-28 011938" src="https://github.com/user-attachments/assets/c1983a63-b939-4205-a6ba-89215ba8c33b" />
+
+
