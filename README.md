@@ -108,5 +108,9 @@ The smart contracts have been successfully deployed and initialized on the Stell
 - <img width="1917" height="488" alt="Screenshot 2026-06-28 011938" src="https://github.com/user-attachments/assets/c1983a63-b939-4205-a6ba-89215ba8c33b" />
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
- <img width="1903" height="845" alt="image" src="https://github.com/user-attachments/assets/bd3b4e9d-ad12-45b4-b9ed-d97b31bbbe2f" />
+ <img width="1903" height="845" alt="image" src="https://github.com/user-attachments/assets/bd3b4e9d-ad12-45b4-b9ed-d97b31bbbe2f" 
+
+ ------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ <img width="1917" height="551" alt="image" src="https://github.com/user-attachments/assets/8c5db1ca-7cde-4e10-82ee-fa3c26d30566" />
 
