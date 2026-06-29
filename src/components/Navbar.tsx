@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Button } from "./ui/button";
 
 export function Navbar() {
-  const { address, connect, disconnect, isConnecting } = useStellar();
+  const { address, balance, connect, disconnect, isConnecting } = useStellar();
 
   return (
     <nav className="flex items-center justify-between p-4 border-b border-border/50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -24,6 +24,11 @@ export function Navbar() {
         
         {address ? (
           <div className="flex items-center gap-2">
+            {balance !== null && (
+              <div className="bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 px-3 py-1.5 rounded-md text-xs font-semibold">
+                {balance} XLM
+              </div>
+            )}
             <div className="bg-muted px-3 py-1.5 rounded-md text-xs font-mono">
               {address.slice(0, 4)}...{address.slice(-4)}
             </div>

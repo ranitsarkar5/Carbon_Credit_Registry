@@ -9,7 +9,7 @@ interface Project {
 
 interface Transaction {
   hash: string;
-  type: 'Register' | 'Verify' | 'Mint' | 'Retire';
+  type: 'Register' | 'Verify' | 'Mint' | 'Retire' | 'Transfer';
   status: 'Pending' | 'Confirmed' | 'Failed';
   timestamp: number;
   explorerLink: string;
