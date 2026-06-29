@@ -118,3 +118,17 @@ The smart contracts have been successfully deployed and initialized on the Stell
 
  <img width="1917" height="551" alt="image" src="https://github.com/user-attachments/assets/8c5db1ca-7cde-4e10-82ee-fa3c26d30566" />
 
+ ## 👨‍💻 Author
+
+**Ranit Sarkar**
+
+Blockchain Enthusiast | Aspiring Developer
+
+Profile link : https://github.com/ranitsarkar5
+
+
+## 📄 License
+
+MIT License
+
+
