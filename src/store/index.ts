@@ -13,6 +13,7 @@ interface Transaction {
   status: 'Pending' | 'Confirmed' | 'Failed';
   timestamp: number;
   explorerLink: string;
+  details?: string;
 }
 
 interface AppState {

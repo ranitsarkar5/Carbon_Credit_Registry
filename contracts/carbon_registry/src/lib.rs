@@ -1,10 +1,10 @@
 #![no_std]
-use soroban_sdk::{contract, contractimpl, contracttype, Address, Env, String, Symbol, symbol_short};
+use soroban_sdk::{contract, contractimpl, contracttype, Address, Env, String, symbol_short};
 
 // The asset contract interface we will call
 mod asset_contract {
     soroban_sdk::contractimport!(
-        file = "../target/wasm32-unknown-unknown/release/carbon_asset.wasm"
+        file = "../target/wasm32v1-none/release/carbon_asset.wasm"
     );
 }
 
@@ -100,4 +100,23 @@ impl CarbonRegistryContract {
         
         env.events().publish((symbol_short!("credits"), symbol_short!("mint")), (project_id, mintable));
     }
+
+    pub fn get_admin(env: Env) -> Option<Address> {
+        env.storage().instance().get(&DataKey::Admin)
+    }
+
+    pub fn get_asset_contract(env: Env) -> Option<Address> {
+        env.storage().instance().get(&DataKey::AssetContract)
+    }
+
+    pub fn is_auditor(env: Env, auditor: Address) -> bool {
+        env.storage().persistent().get(&DataKey::Auditor(auditor)).unwrap_or(false)
+    }
+
+    pub fn get_project(env: Env, project_id: String) -> Option<Project> {
+        env.storage().persistent().get(&DataKey::Project(project_id))
+    }
 }
+
+#[cfg(test)]
+mod test;

@@ -82,13 +82,14 @@ chmod +x deploy.sh
 
 The smart contracts have been successfully deployed and initialized on the Stellar Testnet!
 
-- **Carbon Asset Contract (CCT):** `CBOKOZTX6BZHWX2RJ6VIIY3PQ6L6ZYR6VCEIHBGYN2Z4Y4KAVHAGTARZ`
-- **Carbon Registry Contract:** `CCJ5AVMGK3OSA5SKAYQY622RXDSUVRO3QG74YCGZVYBKIWUVIDRWW5KS`
+- **Carbon Asset Contract (CCT):** `CABYKBGJ7DG33BE5CGPLGYG6JZB5LVXJDF6HBKRJDNAEBIMTVLE3AU5K`
+- **Carbon Registry Contract:** `CCOOXZ6SWWDKB3C4TA3K7QA65ORZPCPCTSZELLDGIWZKT74A7O3SM46W`
 
 ### 🔗 Real Transaction Hashes (Explorer Links)
-- **Deploy Carbon Registry:** [c617592cd04a56dde4a17d6b9bf39b67efb3491fd57fd94abcef9a4a8f592928](https://stellar.expert/explorer/testnet/tx/c617592cd04a56dde4a17d6b9bf39b67efb3491fd57fd94abcef9a4a8f592928)
-- **Initialize Registry:** [98ee5d8546d3308d61104f93a81b988e3b16ffcc3b71a593f9b96f408a8d68a2](https://stellar.expert/explorer/testnet/tx/98ee5d8546d3308d61104f93a81b988e3b16ffcc3b71a593f9b96f408a8d68a2)
-- **Initialize Asset (CCT):** [8a17a35bd32808b0960c843abb883b148548ee86f0f42d8faf62505ab6d7f4e3](https://stellar.expert/explorer/testnet/tx/8a17a35bd32808b0960c843abb883b148548ee86f0f42d8faf62505ab6d7f4e3)
+- **Deploy Carbon Asset:** [3bb4786dda458a7955e50c8700c60b9d5594fe0c211f14016bdad06775ce8f76](https://stellar.expert/explorer/testnet/tx/3bb4786dda458a7955e50c8700c60b9d5594fe0c211f14016bdad06775ce8f76)
+- **Deploy Carbon Registry:** [72e59ce4cf02744e571624947a3b7de4f01f1870c072f4dd3ae5bfe884ce999d](https://stellar.expert/explorer/testnet/tx/72e59ce4cf02744e571624947a3b7de4f01f1870c072f4dd3ae5bfe884ce999d)
+- **Initialize Asset (CCT):** [f80436a8ed0d2b73c4431d6b69f7022a01e1b7d1ac635884f6773c62d22c2ea3](https://stellar.expert/explorer/testnet/tx/f80436a8ed0d2b73c4431d6b69f7022a01e1b7d1ac635884f6773c62d22c2ea3)
+- **Initialize Registry:** [4b42b5d88e39b7237f13fd2649572ca66719eed7b7de4c0e97351eb4d38328bd](https://stellar.expert/explorer/testnet/tx/4b42b5d88e39b7237f13fd2649572ca66719eed7b7de4c0e97351eb4d38328bd)
 
 ---
 

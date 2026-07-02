@@ -71,3 +71,6 @@ impl CarbonAssetContract {
         token_utils.metadata().get_metadata().symbol
     }
 }
+
+#[cfg(test)]
+mod test;
