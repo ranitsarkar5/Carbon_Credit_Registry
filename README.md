@@ -120,6 +120,17 @@ The smart contracts have been successfully deployed and initialized on the Stell
  <img width="1917" height="551" alt="image" src="https://github.com/user-attachments/assets/8c5db1ca-7cde-4e10-82ee-fa3c26d30566" />
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## 🧪 Testing
+
+The contract and frontend come with a suite of automated tests to ensure security and reliability.
+
+### Smart Contract Tests
+Run the smart contract tests locally:
+
+<img width="947" height="515" alt="image" src="https://github.com/user-attachments/assets/b82ef7cd-326d-46d6-a2be-694682182e40" />
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
  ## 👨‍💻 Author
 
 **Ranit Sarkar**
