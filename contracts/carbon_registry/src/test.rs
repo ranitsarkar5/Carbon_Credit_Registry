@@ -5,7 +5,7 @@ use soroban_sdk::{testutils::Address as _, Address, Env, String};
 
 // Import the compiled asset contract WASM from the shared workspace target directory
 mod carbon_asset {
-    soroban_sdk::contractimport!(file = "../target/wasm32v1-none/release/carbon_asset.wasm");
+    soroban_sdk::contractimport!(file = "../target/wasm32-unknown-unknown/release/carbon_asset.wasm");
 }
 
 #[test]

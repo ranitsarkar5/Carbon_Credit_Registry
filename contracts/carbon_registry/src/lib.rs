@@ -4,7 +4,7 @@ use soroban_sdk::{contract, contractimpl, contracttype, Address, Env, String, sy
 // The asset contract interface we will call
 mod asset_contract {
     soroban_sdk::contractimport!(
-        file = "../target/wasm32v1-none/release/carbon_asset.wasm"
+        file = "../target/wasm32-unknown-unknown/release/carbon_asset.wasm"
     );
 }
 

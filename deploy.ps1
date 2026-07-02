@@ -1,6 +1,6 @@
-Write-Host "Building and optimizing contracts..."
+Write-Host "Building contracts..."
 cd contracts
-stellar contract build --optimize
+cargo build --target wasm32-unknown-unknown --release
 cd ..
 
 Write-Host "Setting up Stellar CLI network..."
@@ -20,11 +20,11 @@ try {
 }
 
 Write-Host "Deploying Carbon Asset Contract..."
-$ASSET_ID = (stellar contract deploy --wasm contracts/target/wasm32v1-none/release/carbon_asset.wasm --source deployer --network testnet).Trim()
+$ASSET_ID = (stellar contract deploy --wasm contracts/target/wasm32-unknown-unknown/release/carbon_asset.wasm --source deployer --network testnet).Trim()
 Write-Host "Carbon Asset Deployed at: $ASSET_ID"
 
 Write-Host "Deploying Carbon Registry Contract..."
-$REGISTRY_ID = (stellar contract deploy --wasm contracts/target/wasm32v1-none/release/carbon_registry.wasm --source deployer --network testnet).Trim()
+$REGISTRY_ID = (stellar contract deploy --wasm contracts/target/wasm32-unknown-unknown/release/carbon_registry.wasm --source deployer --network testnet).Trim()
 Write-Host "Carbon Registry Deployed at: $REGISTRY_ID"
 
 Write-Host "Initializing Carbon Asset..."
