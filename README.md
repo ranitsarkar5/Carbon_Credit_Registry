@@ -91,20 +91,6 @@ The smart contracts have been successfully deployed and initialized on the Stell
 - **Initialize Asset (CCT):** [f80436a8ed0d2b73c4431d6b69f7022a01e1b7d1ac635884f6773c62d22c2ea3](https://stellar.expert/explorer/testnet/tx/f80436a8ed0d2b73c4431d6b69f7022a01e1b7d1ac635884f6773c62d22c2ea3)
 - **Initialize Registry:** [4b42b5d88e39b7237f13fd2649572ca66719eed7b7de4c0e97351eb4d38328bd](https://stellar.expert/explorer/testnet/tx/4b42b5d88e39b7237f13fd2649572ca66719eed7b7de4c0e97351eb4d38328bd)
 
----
-
-## 🏆 Level 4 Submission Compliance
-
-This project satisfies all Level 4 checklist requirements for the Stellar ecosystem:
-
-* **Production MVP:** Fully functional production DApp connecting Next.js App Router and Soroban.
-* **Wallet Interactions:** Verified proof of 10+ user wallet interactions on-chain is documented in [wallet_interactions_proof.md](file:///c:/Users/sarka/Desktop/GDG%20steller/carbon-registry/wallet_interactions_proof.md).
-* **User Feedback Summary:** Collected insights and suggestions from 10 onboarded users are documented in [feedback_summary.md](file:///c:/Users/sarka/Desktop/GDG%20steller/carbon-registry/feedback_summary.md).
-* **Monitoring & Analytics:** Real-time production monitoring is integrated via `@vercel/analytics` and `@vercel/speed-insights`.
-* **Technical Standards:** Smart contracts deployed on Stellar testnet (minimum 15+ commits achieved).
-
-* **Live Demo URL:** `[Add Live Demo Link here]`
-* **Demo Video URL:** `[Add YouTube/Loom Demo Video Link here]`
 
 ---
 
