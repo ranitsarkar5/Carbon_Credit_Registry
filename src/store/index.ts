@@ -14,6 +14,9 @@ interface Transaction {
   timestamp: number;
   explorerLink: string;
   details?: string;
+  sender?: string;
+  destination?: string;
+  amount?: string;
 }
 
 interface AppState {

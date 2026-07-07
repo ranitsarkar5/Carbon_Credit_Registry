@@ -3,10 +3,12 @@
 import { useAppStore } from "@/store";
 import { useEffect, useState, useCallback } from "react";
 import { fetchContractEvents, REGISTRY_CONTRACT_ID } from "@/lib/stellar";
-import { AlertCircle, RefreshCw, Activity } from "lucide-react";
+import { AlertCircle, RefreshCw, Activity, RotateCcw, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useStellar } from "@/providers/StellarWalletProvider";
 
 export default function Transactions() {
+  const { address } = useStellar();
   const transactions = useAppStore((state) => state.transactions);
   const addTransaction = useAppStore((state) => state.addTransaction);
   const [isLoading, setIsLoading] = useState(false);
@@ -108,7 +110,7 @@ export default function Transactions() {
                 </div>
               </div>
               
-              <div className="flex items-center justify-between sm:justify-end gap-6 border-t sm:border-0 pt-2 sm:pt-0">
+              <div className="flex flex-wrap items-center justify-between sm:justify-end gap-4 border-t sm:border-0 pt-2 sm:pt-0">
                 <span className="text-[10px] text-muted-foreground font-medium">
                   {new Date(tx.timestamp).toLocaleTimeString()}
                 </span>
@@ -121,6 +123,29 @@ export default function Transactions() {
                 <a href={tx.explorerLink} target="_blank" rel="noreferrer" className="text-xs font-semibold text-blue-500 hover:text-blue-600 hover:underline">
                   Explorer ↗
                 </a>
+
+                {tx.type === "Transfer" && tx.sender && tx.destination && (
+                  <div className="flex items-center gap-2">
+                    {/* Return to Sender (if we are the destination / receiver) */}
+                    {address && tx.destination.toLowerCase() === address.toLowerCase() && (
+                      <a href={`/dashboard?refundTo=${tx.sender}&amount=${tx.amount}`}>
+                        <Button variant="outline" size="sm" className="h-7 text-[10px] px-2 bg-yellow-500/10 border-yellow-500/20 text-yellow-600 hover:bg-yellow-500 hover:text-white flex items-center gap-1 font-semibold rounded-md">
+                          <RotateCcw className="h-3 w-3" />
+                          Return to Sender
+                        </Button>
+                      </a>
+                    )}
+                    {/* Repeat Transfer (if we are the sender) */}
+                    {address && tx.sender.toLowerCase() === address.toLowerCase() && (
+                      <a href={`/dashboard?refundTo=${tx.destination}&amount=${tx.amount}`}>
+                        <Button variant="outline" size="sm" className="h-7 text-[10px] px-2 bg-emerald-500/10 border-emerald-500/20 text-emerald-600 hover:bg-emerald-500/20 flex items-center gap-1 font-semibold rounded-md">
+                          <Send className="h-3 w-3" />
+                          Repeat Transfer
+                        </Button>
+                      </a>
+                    )}
+                  </div>
+                )}
               </div>
             </div>
           ))}

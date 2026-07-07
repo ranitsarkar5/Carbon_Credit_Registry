@@ -167,6 +167,21 @@ export default function Dashboard() {
     }
   }, [address, syncProjects]);
 
+  // Pre-fill transfer form from search parameters (refund helper)
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      const refundTo = params.get("refundTo");
+      const refundAmount = params.get("amount");
+      if (refundTo) {
+        setDestination(refundTo);
+      }
+      if (refundAmount) {
+        setAmount(refundAmount);
+      }
+    }
+  }, []);
+
   // Error Parsing Utility
   const parseStellarError = (error: any, defaultContext: string) => {
     console.error("Parsing error details:", error);
@@ -253,16 +268,20 @@ export default function Dashboard() {
       setTxHash(result.hash);
       setTxStatus("success");
       setTxMessage("Step 5/5: XLM transfer successfully confirmed on-chain!");
-      setDestination("");
-      setAmount("");
-
       addTransaction({
         hash: result.hash,
         type: "Transfer",
         status: "Confirmed",
         timestamp: Date.now(),
         explorerLink: `https://stellar.expert/explorer/testnet/tx/${result.hash}`,
+        details: `Sent ${amount} XLM to ${destination.slice(0, 6)}...${destination.slice(-6)}`,
+        sender: address,
+        destination: destination.trim(),
+        amount: amount.trim(),
       });
+
+      setDestination("");
+      setAmount("");
 
       await refreshBalance();
     } catch (error: any) {
