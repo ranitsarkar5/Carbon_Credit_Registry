@@ -144,6 +144,9 @@ Run the smart contract tests locally:
 
 <img width="947" height="515" alt="image" src="https://github.com/user-attachments/assets/b82ef7cd-326d-46d6-a2be-694682182e40" />
 
+## **Stellar Carbon Credit Registry - User Onboarding & Feedback (Responses)**:
+
+....link....
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
  ## 👨‍💻 Author
