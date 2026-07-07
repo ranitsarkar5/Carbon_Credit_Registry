@@ -146,8 +146,7 @@ Run the smart contract tests locally:
 
 ## **Stellar Carbon Credit Registry - User Onboarding & Feedback (Responses)**:
 
-....link....
-
+[(https://docs.google.com/spreadsheets/d/1PgAYNckvW6HKtzIt20qAbFZX02oFTi5kj1SutdH7FCE/edit?resourcekey=&gid=1873245826#gid=1873245826)]
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
  ## 👨‍💻 Author
 
