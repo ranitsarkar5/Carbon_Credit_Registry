@@ -199,12 +199,49 @@ export default function Dashboard() {
     if (error?.response?.status === 404 || error?.status === 404) {
       return "Your account is unfunded on Testnet. Please fund your account via Friendbot first.";
     }
-    if (error?.response?.data?.extras?.result_codes?.transaction === "tx_insufficient_balance") {
-      return "Insufficient XLM balance to cover the transaction amount and network fees.";
-    }
 
-    if (error?.response?.data?.extras?.result_codes?.operations?.[0] === "op_malformed") {
-      return "Transaction malformed. Please verify the contract address and inputs.";
+    // Extract Horizon extras result codes
+    const resultCodes = error?.response?.data?.extras?.result_codes;
+    if (resultCodes) {
+      const txCode = resultCodes.transaction;
+      const opCode = resultCodes.operations?.[0];
+
+      // Handle Operation Codes
+      if (opCode === "op_no_destination") {
+        return "The destination account does not exist on Stellar Testnet. You must send XLM to an active account, or fund the destination wallet first.";
+      }
+      if (opCode === "op_underfunded") {
+        return "Underfunded: You do not have enough XLM to cover this transfer amount.";
+      }
+      if (opCode === "op_low_reserve") {
+        return "Low Reserve: The transfer would leave either your account or the destination account below the minimum required XLM reserve.";
+      }
+      if (opCode === "op_no_trust") {
+        return "No Trustline: The destination account has not established a trustline for the carbon credit token (CCT) asset.";
+      }
+      if (opCode === "op_line_full") {
+        return "Trustline Full: The destination account trustline limit is full for this asset.";
+      }
+      if (opCode === "op_malformed") {
+        return "Transaction malformed. Please verify the contract address and input parameters.";
+      }
+
+      // Handle Transaction Codes
+      if (txCode === "tx_insufficient_balance") {
+        return "Insufficient XLM balance to cover the transaction amount and network fees.";
+      }
+      if (txCode === "tx_bad_seq") {
+        return "Bad Sequence: Your wallet sequence number is out of sync. Please refresh the page and try again.";
+      }
+      if (txCode === "tx_bad_auth") {
+        return "Bad Authentication: The transaction signature is invalid. Ensure Freighter is configured on Testnet.";
+      }
+      if (txCode === "tx_insufficient_fee") {
+        return "Insufficient Fee: The network fee is too low for the current traffic. Please try again.";
+      }
+      if (txCode === "tx_failed") {
+        return "Transaction failed during on-chain execution. Check inputs or contract state.";
+      }
     }
     
     if (error?.message?.includes("Simulation failed")) {
@@ -216,6 +253,10 @@ export default function Dashboard() {
     }
     
     if (error?.message) {
+      // Clean up the generic Horizon error to be more readable
+      if (error.message.includes("The transaction failed when submitted to the stellar network")) {
+        return `${defaultContext}: The Stellar network rejected the transaction. Ensure the destination address is funded and active.`;
+      }
       return error.message;
     }
     
