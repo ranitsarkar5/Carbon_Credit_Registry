@@ -29,8 +29,33 @@ import {
   Send,
   Building,
   User,
-  Activity
+  Activity,
+  Copy,
+  Check
 } from "lucide-react";
+
+function CopyButton({ text }: { text: string }) {
+  const [copied, setCopied] = useState(false);
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error("Failed to copy text: ", err);
+    }
+  };
+  return (
+    <button
+      type="button"
+      onClick={handleCopy}
+      className="p-1 hover:bg-muted rounded text-muted-foreground hover:text-foreground transition-colors flex items-center justify-center shrink-0"
+      title="Copy to clipboard"
+    >
+      {copied ? <Check className="h-3.5 w-3.5 text-emerald-500" /> : <Copy className="h-3.5 w-3.5" />}
+    </button>
+  );
+}
 
 export default function Dashboard() {
   const { address, balance, isFunding, fundWallet, refreshBalance } = useStellar();
@@ -756,6 +781,19 @@ export default function Dashboard() {
                   "bg-red-500/10 border-red-500/20 text-red-600"
                 }`}>
                   <p className="break-words">{auditorMessage}</p>
+                  {auditorHash && (
+                    <div className="mt-2 pt-2 border-t border-emerald-500/20 flex items-center justify-between gap-2">
+                      <a
+                        href={`https://stellar.expert/explorer/testnet/tx/${auditorHash}`}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-emerald-500 hover:underline font-mono text-[10px] truncate max-w-[200px]"
+                      >
+                        Tx: {auditorHash.slice(0, 8)}...{auditorHash.slice(-8)} ↗
+                      </a>
+                      <CopyButton text={auditorHash} />
+                    </div>
+                  )}
                 </div>
               )}
             </div>
@@ -811,6 +849,19 @@ export default function Dashboard() {
                   "bg-red-500/10 border-red-500/20 text-red-600"
                 }`}>
                   <p className="break-words">{verifyMessage}</p>
+                  {verifyHash && (
+                    <div className="mt-2 pt-2 border-t border-emerald-500/20 flex items-center justify-between gap-2">
+                      <a
+                        href={`https://stellar.expert/explorer/testnet/tx/${verifyHash}`}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-emerald-500 hover:underline font-mono text-[10px] truncate max-w-[200px]"
+                      >
+                        Tx: {verifyHash.slice(0, 8)}...{verifyHash.slice(-8)} ↗
+                      </a>
+                      <CopyButton text={verifyHash} />
+                    </div>
+                  )}
                 </div>
               )}
             </div>
@@ -852,15 +903,16 @@ export default function Dashboard() {
               }`}>
                 <p className="break-words">{regMessage}</p>
                 {regHash && (
-                  <div className="mt-2 pt-2 border-t border-emerald-500/20">
+                  <div className="mt-2 pt-2 border-t border-emerald-500/20 flex items-center justify-between gap-2">
                     <a
                       href={`https://stellar.expert/explorer/testnet/tx/${regHash}`}
                       target="_blank"
                       rel="noreferrer"
-                      className="text-emerald-500 hover:underline font-mono"
+                      className="text-emerald-500 hover:underline font-mono text-[10px] truncate max-w-[200px]"
                     >
                       Tx: {regHash.slice(0, 8)}...{regHash.slice(-8)} ↗
                     </a>
+                    <CopyButton text={regHash} />
                   </div>
                 )}
               </div>
@@ -917,15 +969,16 @@ export default function Dashboard() {
               }`}>
                 <p className="break-words">{txMessage}</p>
                 {txHash && (
-                  <div className="mt-2 pt-2 border-t border-emerald-500/20">
+                  <div className="mt-2 pt-2 border-t border-emerald-500/20 flex items-center justify-between gap-2">
                     <a
                       href={`https://stellar.expert/explorer/testnet/tx/${txHash}`}
                       target="_blank"
                       rel="noreferrer"
-                      className="text-emerald-500 hover:underline font-mono"
+                      className="text-emerald-500 hover:underline font-mono text-[10px] truncate max-w-[200px]"
                     >
                       Tx: {txHash.slice(0, 8)}...{txHash.slice(-8)} ↗
                     </a>
+                    <CopyButton text={txHash} />
                   </div>
                 )}
               </div>
@@ -994,13 +1047,28 @@ export default function Dashboard() {
                           )}
 
                           {status && status.status !== "idle" && (
-                            <div className={`p-2 rounded text-[10px] max-w-[200px] break-words border mx-auto ${
+                            <div className={`p-2 rounded text-[10px] max-w-[200px] break-words border mx-auto space-y-1.5 ${
                               isLoading ? "bg-blue-500/10 border-blue-500/20 text-blue-600" :
                               isSuccess ? "bg-emerald-500/10 border-emerald-500/20 text-emerald-600" :
                               "bg-red-500/10 border-red-500/20 text-red-600"
                             }`}>
-                              <span className="font-bold capitalize">{status.status}: </span>
-                              {status.message}
+                              <div>
+                                <span className="font-bold capitalize">{status.status}: </span>
+                                {status.message}
+                              </div>
+                              {status.hash && (
+                                <div className="pt-1.5 border-t border-emerald-500/20 flex items-center justify-between gap-1">
+                                  <a
+                                    href={`https://stellar.expert/explorer/testnet/tx/${status.hash}`}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="text-emerald-500 hover:underline font-mono text-[9px] truncate max-w-[120px]"
+                                  >
+                                    Tx: {status.hash.slice(0, 6)}...{status.hash.slice(-6)} ↗
+                                  </a>
+                                  <CopyButton text={status.hash} />
+                                </div>
+                              )}
                             </div>
                           )}
                         </td>

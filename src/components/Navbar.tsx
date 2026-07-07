@@ -1,13 +1,15 @@
 "use client";
 
 import { useStellar } from "@/providers/StellarWalletProvider";
+import { useTheme } from "@/providers/ThemeProvider";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { useState } from "react";
-import { Menu, X, Leaf } from "lucide-react";
+import { Menu, X, Leaf, Sun, Moon } from "lucide-react";
 
 export function Navbar() {
   const { address, balance, connect, disconnect, isConnecting } = useStellar();
+  const { theme, toggleTheme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
@@ -15,6 +17,7 @@ export function Navbar() {
     { name: "Transactions", href: "/transactions" },
     { name: "Analytics", href: "/analytics" },
     { name: "Feedback", href: "/feedback" },
+    { name: "Tutorial & Docs", href: "/tutorial" },
     { name: "Settings", href: "/settings" },
   ];
 
@@ -42,6 +45,17 @@ export function Navbar() {
                 {link.name}
               </Link>
             ))}
+
+            {/* Theme Toggle Button */}
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={toggleTheme}
+              className="rounded-full w-9 h-9 text-muted-foreground hover:text-foreground"
+              title="Toggle Theme"
+            >
+              {theme === "dark" ? <Sun className="h-[1.2rem] w-[1.2rem]" /> : <Moon className="h-[1.2rem] w-[1.2rem]" />}
+            </Button>
             
             {address ? (
               <div className="flex items-center gap-3">
@@ -64,8 +78,17 @@ export function Navbar() {
             )}
           </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden flex items-center">
+          {/* Mobile menu button & Theme toggle */}
+          <div className="md:hidden flex items-center gap-2">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={toggleTheme}
+              className="rounded-full w-9 h-9 text-muted-foreground hover:text-foreground"
+              title="Toggle Theme"
+            >
+              {theme === "dark" ? <Sun className="h-[1.2rem] w-[1.2rem]" /> : <Moon className="h-[1.2rem] w-[1.2rem]" />}
+            </Button>
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="inline-flex items-center justify-center p-2 rounded-md text-muted-foreground hover:text-primary hover:bg-muted focus:outline-none"
@@ -97,7 +120,7 @@ export function Navbar() {
                     {balance} XLM
                   </div>
                 )}
-                <div className="bg-muted text-center py-2 rounded-md text-xs font-mono">
+                <div className="bg-muted text-center py-2 rounded-md text-xs font-mono font-medium">
                   {address}
                 </div>
                 <Button variant="outline" size="sm" onClick={() => { disconnect(); setIsOpen(false); }} className="w-full">
