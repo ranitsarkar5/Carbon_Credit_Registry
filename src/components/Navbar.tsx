@@ -14,6 +14,7 @@ export function Navbar() {
     { name: "Dashboard", href: "/dashboard" },
     { name: "Transactions", href: "/transactions" },
     { name: "Analytics", href: "/analytics" },
+    { name: "Feedback", href: "/feedback" },
     { name: "Settings", href: "/settings" },
   ];
 

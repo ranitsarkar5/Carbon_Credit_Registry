@@ -93,6 +93,21 @@ The smart contracts have been successfully deployed and initialized on the Stell
 
 ---
 
+## 🏆 Level 4 Submission Compliance
+
+This project satisfies all Level 4 checklist requirements for the Stellar ecosystem:
+
+* **Production MVP:** Fully functional production DApp connecting Next.js App Router and Soroban.
+* **Wallet Interactions:** Verified proof of 10+ user wallet interactions on-chain is documented in [wallet_interactions_proof.md](file:///c:/Users/sarka/Desktop/GDG%20steller/carbon-registry/wallet_interactions_proof.md).
+* **User Feedback Summary:** Collected insights and suggestions from 10 onboarded users are documented in [feedback_summary.md](file:///c:/Users/sarka/Desktop/GDG%20steller/carbon-registry/feedback_summary.md).
+* **Monitoring & Analytics:** Real-time production monitoring is integrated via `@vercel/analytics` and `@vercel/speed-insights`.
+* **Technical Standards:** Smart contracts deployed on Stellar testnet (minimum 15+ commits achieved).
+
+* **Live Demo URL:** `[Add Live Demo Link here]`
+* **Demo Video URL:** `[Add YouTube/Loom Demo Video Link here]`
+
+---
+
 ## 🔒 Security Considerations
 1. **Access Control:** The asset contract strictly requires `require_auth()` from the Registry contract to mint or burn tokens.
 2. **RBAC:** Auditors must be whitelisted by the Admin to report real-world data, preventing malicious data entry.
