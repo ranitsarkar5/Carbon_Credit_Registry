@@ -91,23 +91,6 @@ The smart contracts have been successfully deployed and initialized on the Stell
 - **Initialize Asset (CCT):** [f80436a8ed0d2b73c4431d6b69f7022a01e1b7d1ac635884f6773c62d22c2ea3](https://stellar.expert/explorer/testnet/tx/f80436a8ed0d2b73c4431d6b69f7022a01e1b7d1ac635884f6773c62d22c2ea3)
 - **Initialize Registry:** [4b42b5d88e39b7237f13fd2649572ca66719eed7b7de4c0e97351eb4d38328bd](https://stellar.expert/explorer/testnet/tx/4b42b5d88e39b7237f13fd2649572ca66719eed7b7de4c0e97351eb4d38328bd)
 
----
-
-## 🏆 Level 5 Submission Compliance
-
-This project satisfies all Level 5 checklist requirements for the Stellar ecosystem:
-
-* **Production MVP:** Fully functional production DApp connecting Next.js App Router and Soroban on Testnet.
-* **User Onboarding & Growth:** Successfully onboarded **52 testnet users** with verified active usage. The exported feedback spreadsheet can be accessed here: [user_onboarding_responses.csv](file:///c:/Users/sarka/Desktop/GDG%20steller/carbon-registry/user_onboarding_responses.csv).
-* **Wallet Interactions:** Verified proof of **52 distinct user wallet interactions** on-chain is documented in [wallet_interactions_proof.md](file:///c:/Users/sarka/Desktop/GDG%20steller/carbon-registry/wallet_interactions_proof.md).
-* **User Feedback Summary:** Collected insights and suggestions from 52 onboarded users are documented in [feedback_summary.md](file:///c:/Users/sarka/Desktop/GDG%20steller/carbon-registry/feedback_summary.md).
-* **Pitch Deck & Presentation:** The professional product presentation outline detailing the problem statement, solution, market opportunity, architecture, growth strategy, and future roadmap is documented in [pitch_deck_outline.md](file:///c:/Users/sarka/Desktop/GDG%20steller/carbon-registry/pitch_deck_outline.md).
-* **Monitoring & Analytics:** Real-time production monitoring is integrated via `@vercel/analytics` and `@vercel/speed-insights`.
-* **Technical Standards:** Smart contracts deployed on Stellar testnet with **29 meaningful commits** in the git repository.
-
-* **Live Deployed Application URL:** `[Add Live Vercel/Netlify Link here]` (e.g. `https://stellar-carbon-registry.vercel.app`)
-* **Loom/YouTube Walkthrough Video URL:** `[Add Demo Walkthrough Video Link here]`
-* **Google Slides/Canva Pitch Deck URL:** `[Add Pitch Deck Presentation Link here]`
 
 ---
 
