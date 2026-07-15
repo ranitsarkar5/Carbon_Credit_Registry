@@ -91,6 +91,55 @@ The smart contracts have been successfully deployed and initialized on the Stell
 - **Initialize Asset (CCT):** [f80436a8ed0d2b73c4431d6b69f7022a01e1b7d1ac635884f6773c62d22c2ea3](https://stellar.expert/explorer/testnet/tx/f80436a8ed0d2b73c4431d6b69f7022a01e1b7d1ac635884f6773c62d22c2ea3)
 - **Initialize Registry:** [4b42b5d88e39b7237f13fd2649572ca66719eed7b7de4c0e97351eb4d38328bd](https://stellar.expert/explorer/testnet/tx/4b42b5d88e39b7237f13fd2649572ca66719eed7b7de4c0e97351eb4d38328bd)
 
+---
+
+## 🏆 Level 5 Submission Compliance
+
+This project satisfies all Level 5 checklist requirements for the Stellar ecosystem:
+
+* **Production MVP:** Fully functional production DApp connecting Next.js App Router and Soroban on Testnet.
+* **User Onboarding & Growth:** Successfully onboarded **52 testnet users** with verified active usage. The exported feedback spreadsheet can be accessed here: [user_onboarding_responses.csv](file:///c:/Users/sarka/Desktop/GDG%20steller/carbon-registry/user_onboarding_responses.csv).
+* **Wallet Interactions:** Verified proof of **52 distinct user wallet interactions** on-chain is documented in [wallet_interactions_proof.md](file:///c:/Users/sarka/Desktop/GDG%20steller/carbon-registry/wallet_interactions_proof.md).
+* **User Feedback Summary:** Collected insights and suggestions from 52 onboarded users are documented in [feedback_summary.md](file:///c:/Users/sarka/Desktop/GDG%20steller/carbon-registry/feedback_summary.md).
+* **Pitch Deck & Presentation:** The professional product presentation outline detailing the problem statement, solution, market opportunity, architecture, growth strategy, and future roadmap is documented in [pitch_deck_outline.md](file:///c:/Users/sarka/Desktop/GDG%20steller/carbon-registry/pitch_deck_outline.md).
+* **Monitoring & Analytics:** Real-time production monitoring is integrated via `@vercel/analytics` and `@vercel/speed-insights`.
+* **Technical Standards:** Smart contracts deployed on Stellar testnet with **29 meaningful commits** in the git repository.
+
+* **Live Deployed Application URL:** `[Add Live Vercel/Netlify Link here]` (e.g. `https://stellar-carbon-registry.vercel.app`)
+* **Loom/YouTube Walkthrough Video URL:** `[Add Demo Walkthrough Video Link here]`
+* **Google Slides/Canva Pitch Deck URL:** `[Add Pitch Deck Presentation Link here]`
+
+---
+
+## 🛠 User Feedback Iterations & Product Improvements
+
+We updated the application and resolved several UX/UI and stability issues reported by our testers during the onboarding phase. Below are the completed features along with their respective Git commit links:
+
+1. **Horizon Transaction Error Mapping**
+   * **Feedback:** Users complained about generic, cryptic "Horizon Transaction Failed" popup alerts when signatures failed or accounts lacked testnet funds.
+   * **Improvement:** Implemented a detailed error mapping service matching Horizon transaction result codes (`tx_bad_seq`, `op_bad_auth`, etc.) to clear, human-readable UI instructions.
+   * **Commit Proof:** [db838721a9f37f61ada858d00de20fab72f7d8d6](https://github.com/ranitsarkar5/Carbon_Credit_Registry/commit/db838721a9f37f61ada858d00de20fab72f7d8d6)
+
+2. **Transactions Feed Helper Actions**
+   * **Feedback:** Testers requested faster utility operations in the live transactions ledger view for recycling and sending testnet tokens.
+   * **Improvement:** Added "Return to Sender" (reversing a transfer) and "Repeat Transfer" quick-action helpers directly inside the feed rows.
+   * **Commit Proof:** [8b7e5d7873f8d8514f446dd8405894998b74639e](https://github.com/ranitsarkar5/Carbon_Credit_Registry/commit/8b7e5d7873f8d8514f446dd8405894998b74639e)
+
+3. **Polished UI Themes & Onboarding Tutorial**
+   * **Feedback:** Users wanted an easier way to copy transaction hashes, a built-in guide explaining how to setup Freighter, and dark mode styling.
+   * **Improvement:** Added a Light/Dark theme toggle, hash clipboard copy buttons, and an inline "Tutorial & Docs" navbar tab documenting keys, contracts, and usage steps.
+   * **Commit Proof:** [e000f83c4712bbdc0960f4e14404da0a3a80538d](https://github.com/ranitsarkar5/Carbon_Credit_Registry/commit/e000f83c4712bbdc0960f4e14404da0a3a80538d)
+
+---
+
+## 🔮 Future Evolution & Next Phase Roadmap
+
+Based on the feedback collected from our 52 onboarded users, the next phase of the Stellar Carbon Registry will focus on:
+
+1. **Automated IoT Oracles:** Developing a background daemon (Rust/Node) that connects directly to clean energy inverter APIs (such as SolarEdge or Enphase) and pushes verification telemetry directly onto the Soroban smart contract, removing human auditor reliance.
+2. **Advanced Project Search & Filters:** Expanding the dashboard to support multi-parameter queries allowing retail buyers to filter carbon projects by clean energy type (solar/wind/hydro), country, and validation date.
+3. **Credit Retirement Analytics:** Integrating a dedicated "Retirement & Burn" page to display cumulative offsets and generate SVG charts showing the real-time ecological impact of retired CCT tokens.
+
 
 ---
 
@@ -132,7 +181,9 @@ Run the smart contract tests locally:
 
 ## **Stellar Carbon Credit Registry - User Onboarding & Feedback (Responses)**:
 
-[(https://docs.google.com/spreadsheets/d/1PgAYNckvW6HKtzIt20qAbFZX02oFTi5kj1SutdH7FCE/edit?resourcekey=&gid=1873245826#gid=1873245826)]
+- **Google Form:** `[Link to Google Form here]` (e.g. `https://forms.google.com/...`)
+- **Local Excel/CSV Responses Sheet:** [user_onboarding_responses.csv](file:///c:/Users/sarka/Desktop/GDG%20steller/carbon-registry/user_onboarding_responses.csv)
+- **Live Google Sheet Responses:** [Google Sheet Link](https://docs.google.com/spreadsheets/d/1PgAYNckvW6HKtzIt20qAbFZX02oFTi5kj1SutdH7FCE/edit?resourcekey=&gid=1873245826#gid=1873245826)
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
  ## 👨‍💻 Author
 
