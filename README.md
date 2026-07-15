@@ -164,8 +164,7 @@ Run the smart contract tests locally:
 
 ## **Stellar Carbon Credit Registry - User Onboarding & Feedback (Responses)**:
 
-- **Google Form:** `[Link to Google Form here]` (e.g. `https://forms.google.com/...`)
-- **Local Excel/CSV Responses Sheet:** [user_onboarding_responses.csv](file:///c:/Users/sarka/Desktop/GDG%20steller/carbon-registry/user_onboarding_responses.csv)
+- **Google Form:** https://forms.gle/5bFuuVugdZziXd9aA
 - **Live Google Sheet Responses:** [Google Sheet Link](https://docs.google.com/spreadsheets/d/1PgAYNckvW6HKtzIt20qAbFZX02oFTi5kj1SutdH7FCE/edit?resourcekey=&gid=1873245826#gid=1873245826)
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
  ## 👨‍💻 Author
